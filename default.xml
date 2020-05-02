@@ -22,12 +22,12 @@
 	   fetch="https://github.com/ResurrectionRemix"
 	   revision="nougat" />
 
-  <remote  name="ga"
-     fetch="https://github.com/GroovyAndroid"
+  <remote  name="gd"
+     fetch="https://github.com/GoldDroid"
      revision="nougat" />
 
   <!-- AOSP Projects -->
-  <project path="build" name="android_build" remote="ga" >
+  <project path="build" name="android_build" remote="gd" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="build/blueprint" name="platform/build/blueprint" groups="pdk,tradefed" remote="aosp" />
@@ -85,7 +85,7 @@
   <project path="external/ceres-solver" name="platform/external/ceres-solver" groups="pdk" remote="aosp" />
   <project path="external/chromium-libpac" name="LineageOS/android_external_chromium-libpac" groups="pdk" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" remote="aosp" />
-  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" clone-depth="1" remote="github" />
+  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" clone-depth="1" revision="master" />
   <project path="external/clang" name="platform/external/clang" groups="pdk" remote="aosp" />
   <project path="external/cmockery" name="platform/external/cmockery" groups="pdk" remote="aosp" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" groups="pdk" remote="aosp" />
@@ -198,7 +198,7 @@
   <project path="external/libopus" name="platform/external/libopus" groups="pdk" remote="aosp" />
   <project path="external/libpcap" name="platform/external/libpcap" groups="pdk" remote="aosp" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" groups="pdk" remote="aosp" />
-  <project path="external/libpng" name="platform/external/libpng" groups="pdk" remote="aosp" />
+  <project path="external/libpng" name="LineageOS/android_external_libpng" groups="pdk" />
   <project path="external/libselinux" name="LineageOS/android_external_libselinux" groups="pdk" />
   <project path="external/libunwind" name="platform/external/libunwind" groups="pdk" remote="aosp" />
   <project path="external/libunwind_llvm" name="platform/external/libunwind_llvm" groups="pdk" remote="aosp" />
@@ -206,7 +206,6 @@
   <project path="external/libusb-compat" name="platform/external/libusb-compat" groups="pdk" remote="aosp" />
   <project path="external/libutf" name="platform/external/libutf" groups="pdk" remote="aosp" />
   <project path="external/libvncserver" name="platform/external/libvncserver" groups="pdk" remote="aosp" />
-  <project path="external/libvorbis" name="LineageOS/android_external_libvorbis" groups="pdk" />
   <project path="external/libvpx" name="LineageOS/android_external_libvpx" groups="pdk" />
   <project path="external/libvterm" name="platform/external/libvterm" groups="pdk" remote="aosp" />
   <project path="external/libweave" name="platform/external/libweave" groups="pdk" remote="aosp" />
@@ -252,7 +251,7 @@
   <project path="external/pcre" name="platform/external/pcre" groups="pdk" remote="aosp" />
   <project path="external/pdfium" name="LineageOS/android_external_pdfium" groups="pdk" />
   <project path="external/piex" name="platform/external/piex" groups="pdk" remote="aosp" />
-  <project path="external/ppp" name="platform/external/ppp" groups="pdk" remote="aosp" />
+  <project path="external/ppp" name="LineageOS/android_external_ppp" groups="pdk" />
   <project path="external/proguard" name="platform/external/proguard" groups="pdk" remote="aosp" />
   <project path="external/protobuf" name="platform/external/protobuf" groups="pdk" remote="aosp" />
   <project path="external/regex-re2" name="platform/external/regex-re2" groups="pdk" remote="aosp" />
@@ -382,6 +381,7 @@
   <project path="packages/apps/CarrierConfig" name="LineageOS/android_packages_apps_CarrierConfig" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CellBroadcastReceiver" name="LineageOS/android_packages_apps_CellBroadcastReceiver" groups="pdk-cw-fs,pdk-fs" />
   <project path="packages/apps/CertInstaller" name="LineageOS/android_packages_apps_CertInstaller" groups="pdk-cw-fs,pdk-fs" />
+  <project path="packages/apps/DeskClock" name="LineageOS/android_packages_apps_DeskClock" groups="pdk-fs" />
   <project path="packages/apps/Email" name="LineageOS/android_packages_apps_Email" groups="pdk-fs" />
   <project path="packages/apps/EmergencyInfo" name="LineageOS/android_packages_apps_EmergencyInfo" groups="pdk-fs" />
   <project path="packages/apps/Gallery2" name="LineageOS/android_packages_apps_Gallery2" groups="pdk-fs" />
@@ -461,7 +461,7 @@
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" clone-depth="1" remote="aosp" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs,pdk-fs" remote="aosp" />
   <project path="system/bt" name="LineageOS/android_system_bt" groups="pdk" />
-  <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" remote="aosp" />
+  <project path="system/ca-certificates" name="platform/system/ca-certificates" groups="pdk" remote="aosp" revision="refs/tags/android-8.1.0_r36" />
   <project path="system/connectivity/apmanager" name="platform/system/connectivity/apmanager" remote="aosp" />
   <project path="system/connectivity/dhcp_client" name="platform/system/connectivity/dhcp_client" remote="aosp" />
   <project path="system/connectivity/shill" name="platform/system/connectivity/shill" remote="aosp" />
@@ -494,7 +494,7 @@
   <project path="tools/test/connectivity" name="platform/tools/test/connectivity" groups="pdk" remote="aosp" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" remote="aosp" />
 
-  <include name="snippets/ga-n.xml" />
+  <include name="snippets/gd-n.xml" />
   <include name="snippets/rr-n.xml" />
   <include name="snippets/cm.xml" />
 
